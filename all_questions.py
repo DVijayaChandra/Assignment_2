@@ -81,22 +81,43 @@ def question1():
 # ----------------------------------------------------------------------
 
 
+class BinaryTree:
+    def __init__(self, root):
+        self.key = root
+        self.left_child = None
+        self.right_child = None
+
+    def insert_left(self, new_node):
+        if self.left_child is None:
+            self.left_child = BinaryTree(new_node)
+        else:
+            t = BinaryTree(new_node)
+            t.left_child = self.left_child
+            self.left_child = t
+        return self.left_child
+
+    def insert_right(self, new_node):
+        if self.right_child is None:
+            self.right_child = BinaryTree(new_node)
+        else:
+            t = BinaryTree(new_node)
+            t.right_child = self.right_child
+            self.right_child = t
+        return self.right_child
+
 def question2():
     answer = {}
 
-    # Assuming entropy and other calculations are correct and just updating keys as per error message.
+    # Initial entropy and conditions as per your original task
     answer["(a) entropy_entire_data"] = 1.4253642047367425
-
-    # Correcting key names to match expected format
-    answer["(b) x <= 0.2"] = 0.17739286055515824  # No change here as the assertion error seems to be a mistake or misunderstanding
+    answer["(b) x <= 0.2"] = 0.17739286055515824
     answer["(b) x <= 0.7"] = 0.3557029418697566
     answer["(b) y <= 0.6"] = 0.34781842724338197
 
-    # Choose one of 'x=0.2', 'x=0.7', or 'y=0.6' based on some criteria (kept as is because it seems to be correct based on given information)
+    # Choosing the attribute based on some criteria
     answer["(c) attribute"] = "y=0.6"  
 
-    # Use the Binary Tree structure to construct the tree
-    # Answer is an instance of BinaryTree
+    # Constructing the decision tree
     tree = BinaryTree("y <= 0.6")
     left = tree.insert_left("x <= 0.7")
     right = tree.insert_right("x <= 0.2")
@@ -115,6 +136,7 @@ def question2():
     answer["(d) full decision tree"] = tree
 
     return answer
+
 
 
 
