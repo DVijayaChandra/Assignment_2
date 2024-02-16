@@ -134,7 +134,7 @@ def question3():
     answer["(f) attr for splitting"] = "Car Type"
 
     # Explanatory text string
-    answer["(f) explain choice"] = "Car type has the lowest Gini index of all, excluding ID. ID is an identification column and cannot be treated for the Gini index, as it holds no value in that context. With a lower Gini index, Car Type is a purer class than Shirt Size, and so is a better attribute to split on."
+    answer["(f) explain choice"] = "The Car Type attribute exhibits the lowest Gini index among all attributes, excluding the ID column. Since the ID column serves as an identification label and holds no meaningful value for Gini index calculations, it is not considered. The lower Gini index of the Car Type attribute indicates a higher purity in class distribution compared to the Shirt Size attribute. Therefore, Car Type is identified as a superior attribute for splitting the dataset"
     return answer
 
 
